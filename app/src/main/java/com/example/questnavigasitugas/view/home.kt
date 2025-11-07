@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -65,10 +66,13 @@ fun home(
             }
             Spacer(modifier = Modifier.height(20.dp))
             Button(
-                modifier = Modifier.fillMaxWidth(1f),
+                modifier = Modifier.fillMaxWidth(),
                 onClick = OnToFormBtnClick,
-
-                ){
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color.Black,  // warna background button
+                    contentColor = Color.White     // warna teks di dalam button
+                )
+            ){
                 Text(stringResource(id = R.string.submit))
             }
 
