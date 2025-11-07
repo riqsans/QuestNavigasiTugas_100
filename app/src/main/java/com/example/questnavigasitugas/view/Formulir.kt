@@ -40,3 +40,18 @@ import androidx.compose.ui.unit.sp
 import com.example.questnavigasitugas.R
 
 @OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun FormulirPendaftaran(
+    onSubmitButtonClick: () -> Unit,
+    modifier: Modifier = Modifier) {
+    var nama by remember { mutableStateOf(TextFieldValue("")) }
+    var alamat by remember { mutableStateOf(TextFieldValue("")) }
+    var jenisKelamin by remember { mutableStateOf("") }
+    var statusPerkawinan by remember { mutableStateOf("") }
+
+    val paddingSmall = dimensionResource(id = R.dimen.padding_smallform)
+    val paddingMedium = dimensionResource(id = R.dimen.padding_mediumform)
+    val paddingLarge = dimensionResource(id = R.dimen.padding_largeform)
+    val buttonHeight = dimensionResource(id = R.dimen.button_heightform)
+
+    
