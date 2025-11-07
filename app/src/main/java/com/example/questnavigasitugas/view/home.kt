@@ -52,3 +52,15 @@ fun home(
                 contentDescription = null,
                 modifier = Modifier.size(500.dp)
             )
+            Column(modifier= Modifier,horizontalAlignment = Alignment.CenterHorizontally,
+            ){
+                Text(text = stringResource(R.string.nama_lengkap),
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 20.sp
+                )
+                Text(text = stringResource(R.string.NIM),
+                    textAlign = TextAlign.Center,
+                    fontSize = 15.sp
+                )
+            }
+            
