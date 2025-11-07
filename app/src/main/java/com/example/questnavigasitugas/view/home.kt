@@ -34,4 +34,9 @@ fun home(
         modifier = Modifier
             .fillMaxSize()
             .background(Color(0xFF000000))
-    )
+    ){
+        Column(modifier = Modifier
+            .fillMaxSize()
+            .padding(top = 200.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+        )
