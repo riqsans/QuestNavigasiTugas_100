@@ -46,3 +46,9 @@ fun home(
                 color = Color(0xFFFFFFFF)
             )
 
+            val gambar = painterResource(R.drawable.logomercie)
+            Image(
+                painter = gambar,
+                contentDescription = null,
+                modifier = Modifier.size(500.dp)
+            )
