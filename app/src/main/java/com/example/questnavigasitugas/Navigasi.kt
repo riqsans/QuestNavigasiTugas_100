@@ -23,4 +23,43 @@ fun DataApp(
     navController: NavHostController = rememberNavController(),
     modifier: Modifier
 ){
-    
+    Scaffold { isiRuang->
+        NavHost(
+            navController = navController,
+            startDestination = Navigasi.Home.name,
+            modifier = Modifier.padding(isiRuang))
+        {
+
+            composable(route = Navigasi.Home.name){
+                home(
+                    OnToFormBtnClick = {
+                        navController.navigate(Navigasi.Formulirku.name)
+                    }
+                )
+            }
+            composable(route = Navigasi.Formulirku.name){
+                FormulirPendaftaran(
+                    onSubmitButtonClick = {
+                        navController.navigate(Navigasi.Detail.name)
+                    }
+                )
+            }
+            composable(route = Navigasi.Detail.name) {
+                TampilData(
+                    onToFormBtnClick = {
+                        navController.popBackStack()
+                    },
+                    onToHomeBtnClick = {
+                        navController.navigate(Navigasi.Home.name) {
+                            popUpTo(Navigasi.Home.name) {
+                                inclusive = true
+                            }
+                            launchSingleTop = true
+                        }
+                    }
+                )
+            }
+
+        }
+    }
+}
