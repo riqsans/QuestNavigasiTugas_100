@@ -26,3 +26,12 @@ import androidx.compose.ui.unit.sp
 import com.example.questnavigasitugas.R
 
 @OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun home(
+    modifier: Modifier = Modifier,
+    OnToFormBtnClick : () -> Unit){
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color(0xFF000000))
+    )
