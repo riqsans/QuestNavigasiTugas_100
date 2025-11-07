@@ -54,4 +54,117 @@ fun FormulirPendaftaran(
     val paddingLarge = dimensionResource(id = R.dimen.padding_largeform)
     val buttonHeight = dimensionResource(id = R.dimen.button_heightform)
 
-    
+    Surface(
+        color = Color(0xFFF6ECFF),
+        modifier = Modifier.fillMaxSize()
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(top = 10.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ){
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .statusBarsPadding()
+                    .background(Color(0xFFB56BFF)) // warna ungu full tepi layar
+                    .padding(vertical = paddingLarge)
+            ) {
+                Text(
+                    text = stringResource(R.string.FormulirPendaftaran),
+                    fontSize = dimensionResource(R.dimen.font_titleform).value.sp,
+                    color = Color.White,
+                    fontWeight = FontWeight.Bold,
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                )
+            }
+            Spacer(modifier = Modifier.height(20.dp))
+
+            Card(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = paddingMedium)
+                    .wrapContentHeight(),
+                shape = RoundedCornerShape(16.dp),
+                colors = CardDefaults.cardColors(containerColor = Color.White),
+                elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
+            ){
+                Column(modifier = Modifier
+                    .padding(paddingMedium)
+                    .fillMaxWidth()
+                ){
+                    Text("NAMA LENGKAP", fontWeight = FontWeight.Bold)
+                    OutlinedTextField(
+                        value = nama,
+                        onValueChange = { nama = it },
+                        placeholder = { Text("Isian nama lengkap") },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(vertical = paddingSmall)
+                    )
+                    Spacer(modifier = Modifier.height(paddingMedium))
+
+                    Text("JENIS KELAMIN", fontWeight = FontWeight.Bold)
+                    Spacer(modifier = Modifier.height(paddingSmall))
+                    Column(verticalArrangement = Arrangement.spacedBy(paddingSmall)) {
+                        listOf("Laki-laki", "Perempuan").forEach { opsi ->
+                            Row(verticalAlignment = Alignment.CenterVertically) {
+                                RadioButton(
+                                    selected = jenisKelamin == opsi,
+                                    onClick = { jenisKelamin = opsi }
+                                )
+                                Text(opsi)
+                            }
+                        }
+                    }
+                    Spacer(modifier = Modifier.height(paddingMedium))
+
+                    Text("STATUS PERKAWINAN", fontWeight = FontWeight.Bold)
+                    Spacer(modifier = Modifier.height(paddingSmall))
+                    Column(verticalArrangement = Arrangement.spacedBy(paddingSmall)) {
+                        listOf("Janda", "Lajang", "Duda").forEach { opsi ->
+                            Row(verticalAlignment = Alignment.CenterVertically) {
+                                RadioButton(
+                                    selected = statusPerkawinan == opsi,
+                                    onClick = { statusPerkawinan = opsi }
+                                )
+                                Text(opsi)
+                            }
+                        }
+                    }
+                    Spacer(modifier = Modifier.height(paddingMedium))
+
+                    Text("ALAMAT", fontWeight = FontWeight.Bold)
+                    OutlinedTextField(
+                        value = alamat,
+                        onValueChange = { alamat = it },
+                        placeholder = { Text("Alamat lengkap") },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(vertical = paddingSmall)
+                    )
+                    Spacer(modifier = Modifier.height(paddingLarge))
+
+                    Button(
+                        onClick = onSubmitButtonClick,
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF8A2BE2)),
+                        shape = RoundedCornerShape(50),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(buttonHeight)
+                    ) {
+                        Text(stringResource(R.string.submit), color = Color.White, fontWeight = FontWeight.Bold)
+                    }
+
+
+                }
+
+            }
+
+        }
+    }
+
+}
