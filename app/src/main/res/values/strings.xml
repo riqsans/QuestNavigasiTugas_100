@@ -11,4 +11,5 @@
     <string name="back">Formulir Pendaftaran</string>
     <string name="home">home</string>
     <string name="nama_lengkap">M Thoriq Ramadhan</string>
+    <string name="label_nama_lengkap">Nama Lengkap</string>
 </resources>

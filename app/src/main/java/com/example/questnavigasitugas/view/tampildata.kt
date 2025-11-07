@@ -33,8 +33,8 @@ fun TampilData(
     onToFormBtnClick:()-> Unit,
     onToHomeBtnClick:()-> Unit,
 ){val items = listOf(
-    Pair(stringResource(id = R.string.nama_lengkap), "thoriq"),
-    Pair(stringResource(id = R.string.jenis_kelamin), "laki"),
+    Pair(stringResource(id = R.string.label_nama_lengkap), "thoriq"),
+    Pair(stringResource(id = R.string.jenis_kelamin), "laki-laki"),
     Pair(stringResource(id = R.string.alamat), "yogyakarta")
 )
     Scaffold(modifier = Modifier,
