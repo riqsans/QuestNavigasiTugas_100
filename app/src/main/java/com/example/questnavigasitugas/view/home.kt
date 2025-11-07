@@ -63,4 +63,15 @@ fun home(
                     fontSize = 15.sp
                 )
             }
-            
+            Spacer(modifier = Modifier.height(20.dp))
+            Button(
+                modifier = Modifier.fillMaxWidth(1f),
+                onClick = OnToFormBtnClick,
+
+                ){
+                Text(stringResource(id = R.string.submit))
+            }
+
+        }
+    }
+}
