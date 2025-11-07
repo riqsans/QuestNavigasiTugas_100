@@ -12,3 +12,10 @@ import com.example.questnavigasitugas.view.FormulirPendaftaran
 import com.example.questnavigasitugas.view.TampilData
 import com.example.questnavigasitugas.view.home
 
+enum class Navigasi{
+    Formulirku,
+    Detail,
+    Home
+}
+
+
