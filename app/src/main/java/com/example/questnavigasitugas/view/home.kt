@@ -39,4 +39,10 @@ fun home(
             .fillMaxSize()
             .padding(top = 200.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
-        )
+        ){
+            Text(text = stringResource(R.string.selamat_datang),
+                fontWeight = FontWeight.Bold,
+                fontSize = 30.sp,
+                color = Color(0xFFFFFFFF)
+            )
+
