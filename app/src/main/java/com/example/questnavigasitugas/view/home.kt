@@ -33,7 +33,7 @@ fun home(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFF000000))
+            .background(Color(0xFFFFFFFF))
     ){
         Column(modifier = Modifier
             .fillMaxSize()
@@ -43,7 +43,7 @@ fun home(
             Text(text = stringResource(R.string.selamat_datang),
                 fontWeight = FontWeight.Bold,
                 fontSize = 30.sp,
-                color = Color(0xFFFFFFFF)
+                color = Color(0xFF000000)
             )
 
             val gambar = painterResource(R.drawable.logomercie)
