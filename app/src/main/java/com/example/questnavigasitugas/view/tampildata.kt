@@ -32,4 +32,8 @@ fun TampilData(
     modifier:Modifier = Modifier,
     onToFormBtnClick:()-> Unit,
     onToHomeBtnClick:()-> Unit,
+){val items = listOf(
+    Pair(stringResource(id = R.string.nama_lengkap), "thoriq"),
+    Pair(stringResource(id = R.string.jenis_kelamin), "laki"),
+    Pair(stringResource(id = R.string.alamat), "yogyakarta")
 )
